@@ -328,12 +328,16 @@ $git merge
 
 上述多少有点麻烦，因此更简单的`git pull`就很吸引人了。
 
+```bash
+$ git pull origin develop
+```
+
 **建议每次提交代码之前都要执行一下**，以防止远程仓库已经被你的同事更新了，以和最新的仓库合并。
 
 ### 提交
 
 ```bash
-$git push  origion [<loacl branchname>:<remote branchname>]
+$git push  origin [<loacl branchname>:<remote branchname>]
 ```
 
 给个栗子
