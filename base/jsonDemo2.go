@@ -9,7 +9,7 @@ import (
 type Student struct {
 	Id   int32  `json:"id"`
 	Name string `json:"name"`
-	Sid  string `json:"studentId"`
+	Sid  string `json:"studentId,omitempty"`
 }
 
 func main() {
@@ -17,12 +17,12 @@ func main() {
 		Student{
 			Id:   0,
 			Name: "韩墨霖",
-			Sid:  "20201202048",
+			Sid:  "",
 		},
 		Student{
 			Id:   0,
-			Name: "韩墨霖",
-			Sid:  "20201202048"},
+			Name: "马钰鹏",
+			Sid:  "20201202075"},
 	}
 	fmt.Printf("%#v\n", student1)
 	sJson, err := json.MarshalIndent(student1, "", " ")
@@ -31,9 +31,9 @@ func main() {
 		os.Exit(1)
 	}
 	fmt.Printf("%s\n", sJson)
-	name := struct {
+	var name []struct {
 		Name string `json:"name"`
-	}{}
+	}
 	json.Unmarshal(sJson, &name)
-	fmt.Printf("%#v \n", name)
+	fmt.Printf("%v \n", name)
 }
